@@ -45,29 +45,16 @@ class mod_hvp_renderer extends plugin_renderer_base {
     public function hvp_alter_styles(&$scripts, $libraries, $embedtype) {
     }
 
-    
-    
-    
-    
     /**
-     * Add scripts when an H5P is displayed.
+     * Alter which scripts are loaded for H5P. Useful for adding your
+     * own custom scripts or replacing existing ones.
      *
-     * @param object $scripts Scripts that will be applied.
-     * @param array $libraries Libraries that will be displayed.
-     * @param string $embedType How the H5P is displayed.
+     * @param object $scripts List of JavaScripts that will be loaded
+     * @param array $libraries Array of libraries indexed by the library's machineName
+     * @param string $embedtype Possible values: div, iframe, external, editor
      */
-    public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
-        global $CFG;
-        $scripts[] = (object) array(
-            'path'    => '/usr/share/nginx/html/mod/hvp/videojs.js',
-            'version' => '?ver=0.0.1',
-        );
+    public function hvp_alter_scripts(&$scripts, $libraries, $embedtype) {
     }
-
-    
-    
-    
-    
 
     /**
      * Alter semantics before they are processed. This is useful for changing
