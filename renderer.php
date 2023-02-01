@@ -59,7 +59,7 @@ class mod_hvp_renderer extends plugin_renderer_base {
     public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
         global $CFG;
         $scripts[] = (object) array(
-            'path'    => 'moodle/mod/hvp/videojs.js',
+            'path'    => 'videojs.js',
             'version' => '?ver=0.0.1',
         );
     }
