@@ -57,13 +57,29 @@ class mod_hvp_renderer extends plugin_renderer_base {
      * @param string $embedType How the H5P is displayed.
      */
     public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
-        console.log(process.cwd());
-        global $CFG;
-        $scripts[] = (object) array(
-            'path'    => 'videojs.js',
-            'version' => '?ver=0.0.1',
-        );
-    }
+        H5P.jQuery(document).on('ready', function () {
+          if (H5P && H5P.instances[0] && H5P.instances[0].libraryInfo.machineName === 'H5P.InteractiveVideo') {
+            H5P.instances[0].video.on('stateChange', function (e) {
+              switch (e.data) {
+                case H5P.Video.BUFFERING:
+                  console.log('Loading');
+                  break;
+
+                case H5P.Video.PLAYING:
+                  console.log('Playing');
+                  break;
+
+                case H5P.Video.PAUSED:
+                  console.log('Paused');
+                  break;
+
+                case H5P.Video.ENDED:
+                  console.log('Finished');
+                  break;
+              }
+            });
+          }
+        });
 
     
     
