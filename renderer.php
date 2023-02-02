@@ -48,8 +48,7 @@ class mod_hvp_renderer extends plugin_renderer_base {
     
     
     
-    
-    /**
+       /**
      * Add scripts when an H5P is displayed.
      *
      * @param object $scripts Scripts that will be applied.
@@ -57,31 +56,11 @@ class mod_hvp_renderer extends plugin_renderer_base {
      * @param string $embedType How the H5P is displayed.
      */
     public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
-        H5P.jQuery(document).on('ready', function () {
-          if (H5P && H5P.instances[0] && H5P.instances[0].libraryInfo.machineName === 'H5P.InteractiveVideo') {
-            H5P.instances[0].video.on('stateChange', function (e) {
-              switch (e.data) {
-                case H5P.Video.BUFFERING:
-                  console.log('Loading');
-                  break;
+        console.log('h5p interactive video running');
 
-                case H5P.Video.PLAYING:
-                  console.log('Playing');
-                  break;
-
-                case H5P.Video.PAUSED:
-                  console.log('Paused');
-                  break;
-
-                case H5P.Video.ENDED:
-                  console.log('Finished');
-                  break;
-              }
-            });
-          }
-        });
-
+    
     }
+    
     
     
     
