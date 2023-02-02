@@ -56,11 +56,7 @@ class mod_hvp_renderer extends plugin_renderer_base {
      * @param string $embedType How the H5P is displayed.
      */
     public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
-        console.log('h5p interactive video running');
-        echo 'h5p interactive video running';
-        var_dump('h5p interactive video running');
-
-    
+       
     }
     
     
