@@ -48,7 +48,7 @@ class mod_hvp_renderer extends plugin_renderer_base {
     
     
     
-       /**
+        /**
      * Add scripts when an H5P is displayed.
      *
      * @param object $scripts Scripts that will be applied.
@@ -57,10 +57,11 @@ class mod_hvp_renderer extends plugin_renderer_base {
      */
     public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
         console.log('h5p interactive video running');
+        echo 'h5p interactive video running';
+        var_dump('h5p interactive video running');
 
     
     }
-    
     
     
     
