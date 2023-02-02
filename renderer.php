@@ -81,7 +81,7 @@ class mod_hvp_renderer extends plugin_renderer_base {
           }
         });
 
-    
+    }
     
     
     
